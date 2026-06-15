@@ -1,0 +1,66 @@
+:host {
+  display: block;
+}
+
+.admin-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+}
+.admin-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 32px;
+}
+.admin-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 1px;
+}
+.admin-brand .wm-top {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+.admin-brand .wm-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.admin-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: var(--primary-soft);
+  border: 1px solid var(--border-strong);
+  color: var(--primary-light);
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s;
+}
+.admin-back:hover {
+  background: rgba(0, 62, 153, 0.2);
+  border-color: var(--primary-light);
+}
+
+:host-context([data-theme='light']) .admin-brand .wm-top {
+  color: var(--text);
+}
+
+@media (max-width: 480px) {
+  .admin-nav-inner {
+    padding: 12px 16px;
+  }
+}

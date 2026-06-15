@@ -1,0 +1,200 @@
+:host {
+  display: block;
+}
+
+.admin-page {
+  padding: 40px 0 80px;
+}
+
+.admin-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.admin-header h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.admin-header h4 span {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  background: var(--primary-soft);
+  border: 1px solid rgba(77, 143, 239, 0.22);
+  padding: 2px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.admin-slides-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.admin-slide-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr auto;
+  gap: 12px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 16px;
+}
+.admin-slide-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: var(--primary-soft);
+  color: var(--primary-light);
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: grid;
+  place-items: center;
+}
+.admin-input {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  padding: 8px 12px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.88rem;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.admin-input:focus {
+  border-color: var(--primary-light);
+}
+.admin-input::placeholder {
+  color: var(--text-dim);
+}
+.admin-slide-actions {
+  display: flex;
+  gap: 6px;
+}
+.admin-action-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--text-mute);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.admin-action-btn:hover {
+  background: rgba(220, 38, 38, 0.12);
+  color: #f87171;
+  border-color: rgba(220, 38, 38, 0.3);
+}
+.admin-action-btn.move:hover {
+  background: rgba(0, 62, 153, 0.15);
+  color: var(--primary-light);
+  border-color: var(--border-strong);
+}
+.admin-action-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.admin-row-bottom {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.admin-btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary-soft);
+  border: 1px dashed rgba(77, 143, 239, 0.35);
+  color: var(--primary-light);
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+.admin-btn-add:hover {
+  background: rgba(0, 62, 153, 0.2);
+  border-color: var(--primary-light);
+}
+.admin-btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--primary);
+  color: #fff;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.88rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.15s, transform 0.15s;
+}
+.admin-btn-save:hover {
+  background: var(--primary-2);
+  transform: translateY(-1px);
+}
+.admin-save-msg {
+  font-size: 0.82rem;
+  color: #4ade80;
+  display: none;
+}
+.admin-save-msg.visible {
+  display: inline;
+}
+
+/* Light theme */
+:host-context([data-theme='light']) .admin-header h4 {
+  color: var(--text);
+}
+:host-context([data-theme='light']) .admin-input {
+  background: #fff;
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+:host-context([data-theme='light']) .admin-slide-row {
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .admin-slide-row {
+    grid-template-columns: 40px 1fr auto;
+  }
+  .admin-slide-row .admin-input:nth-child(3) {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .admin-slide-row {
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+  }
+  .admin-slide-num {
+    display: none;
+  }
+  .admin-slide-row .admin-input:nth-child(3) {
+    display: none;
+  }
+  .admin-btn-add,
+  .admin-btn-save {
+    font-size: 0.82rem;
+    padding: 8px 14px;
+  }
+}
