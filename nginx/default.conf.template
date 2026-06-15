@@ -1,0 +1,43 @@
+# Rendered by the nginx image entrypoint at startup: ${PORT} is replaced with
+# the value Railway injects. Other nginx variables ($uri, $host, ...) are left
+# untouched because envsubst only substitutes declared environment variables.
+server {
+    listen       ${PORT};
+    server_name  _;
+
+    root   /usr/share/nginx/html;
+    index  index.html;
+
+    # ---- Compression ----
+    gzip on;
+    gzip_comp_level 6;
+    gzip_min_length 1024;
+    gzip_vary on;
+    gzip_types
+        text/plain
+        text/css
+        application/javascript
+        application/json
+        image/svg+xml
+        application/xml
+        font/ttf
+        font/woff
+        font/woff2;
+
+    # ---- Long-cache fingerprinted assets (filenames carry a content hash) ----
+    location ~* \.(?:js|css|woff2?|ttf|eot|svg|png|jpe?g|gif|ico|webp)$ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    # ---- SPA fallback: unknown routes (e.g. /admin) serve index.html ----
+    location / {
+        try_files $uri $uri/ /index.html;
+    }
+
+    # ---- index.html is never cached, so new deploys are picked up immediately ----
+    location = /index.html {
+        add_header Cache-Control "no-cache";
+    }
+}
