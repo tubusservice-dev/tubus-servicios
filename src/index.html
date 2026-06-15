@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Tubus Servicios · Concesionario Autorizado Yutong — Carabobo, Venezuela</title>
+  <base href="/" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Tubus Servicios — Concesionario autorizado Yutong con sedes en Carabobo & Guatire. Mantenimiento, repuestos y asesoría técnica para autobuses Yutong y otras marcas en Venezuela." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/bus-icon-blue.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tubus Servicios · Concesionario Autorizado Yutong" />
+  <meta property="og:description" content="Mantenimiento, repuestos originales y asesoría técnica para autobuses Yutong y otras marcas. Sedes en Carabobo & Guatire, Venezuela." />
+  <meta property="og:image" content="assets/icons/tubus-servicios.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Theme: read persisted preference before paint to avoid flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('tubus_theme') ||
+        (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
+</head>
+<body>
+  <app-root></app-root>
+</body>
+</html>
