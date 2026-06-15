@@ -37,6 +37,16 @@ button {
   border: none;
 }
 
+/* Layout host elements default to display:inline (custom elements); force them
+   to block so full-width children (the sticky header, sections) span correctly. */
+app-root,
+app-main-layout,
+app-admin-layout,
+app-home,
+app-admin {
+  display: block;
+}
+
 /* ---------- Tokens — dark (default) ---------- */
 :root {
   --bg: #07080d;
