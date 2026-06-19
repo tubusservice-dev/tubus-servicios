@@ -24,6 +24,20 @@ footer {
   color: var(--primary-light);
 }
 
+/* "Developed by" credit line */
+.footer-credit {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.footer-credit .dev-name {
+  color: var(--primary-light);
+  font-weight: 700;
+}
+
 @media (max-width: 768px) {
   .footer-inner {
     flex-direction: column;
