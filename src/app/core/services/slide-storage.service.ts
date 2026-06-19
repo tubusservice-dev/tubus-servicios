@@ -4,9 +4,9 @@ import { Slide } from '../../models';
 const STORAGE_KEY = 'tubus_banner_slides';
 
 const DEFAULT_SLIDES: Slide[] = [
-  { url: '', title: 'Flota Yutong', caption: 'Concesionario autorizado Yutong' },
-  { url: '', title: 'Taller Especializado', caption: 'Técnicos certificados en autobuses' },
-  { url: '', title: 'Repuestos Originales', caption: 'Stock permanente con garantía de fábrica' },
+  { url: 'assets/img/banner-2.jpg', title: '', caption: '' },
+  // Banner 1 ready to add later:
+  // { url: 'assets/img/banner-1.jpg', title: '', caption: '' },
 ];
 
 /** Persists the gallery slides in localStorage (no backend). */

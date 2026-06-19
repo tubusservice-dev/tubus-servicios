@@ -76,6 +76,8 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
 
   private restartAuto(): void {
     if (this.autoTimer) clearInterval(this.autoTimer);
+    // A single banner has nothing to rotate — skip autoplay and the progress bar.
+    if (this.slides().length <= 1) return;
     this.resetProgressBar();
     this.autoTimer = setInterval(() => this.next(), AUTOPLAY_MS);
   }

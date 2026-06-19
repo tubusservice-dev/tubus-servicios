@@ -10,7 +10,8 @@
 .banner-carousel {
   position: relative;
   width: 100%;
-  height: 480px;
+  /* Match the banner image ratio (1440x400) so it shows fully, no cropping. */
+  aspect-ratio: 1440 / 400;
   overflow: hidden;
 }
 .banner-slide {
@@ -174,9 +175,6 @@
 
 /* Responsive */
 @media (max-width: 980px) {
-  .banner-carousel {
-    height: 340px;
-  }
   .banner-caption {
     padding: 20px 24px;
   }
@@ -192,9 +190,6 @@
   }
 }
 @media (max-width: 768px) {
-  .banner-carousel {
-    height: 280px;
-  }
   .banner-caption-text h3 {
     font-size: 1.15rem;
   }
@@ -213,9 +208,6 @@
   }
 }
 @media (max-width: 480px) {
-  .banner-carousel {
-    height: 220px;
-  }
   .banner-caption {
     padding: 14px 16px 18px;
   }

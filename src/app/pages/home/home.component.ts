@@ -6,24 +6,27 @@ import {
   HeroComponent,
   ServicesComponent,
 } from '../../features';
+import { BannerComponent } from '../../shared';
 
 /** Public landing page: composes every section in order. */
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    HeroComponent,
     GalleryComponent,
+    HeroComponent,
     ServicesComponent,
     AboutComponent,
     ContactComponent,
+    BannerComponent,
   ],
   template: `
-    <app-hero />
     <app-gallery />
+    <app-hero />
     <app-services />
     <app-about />
     <app-contact />
+    <app-banner src="assets/img/banner-1.jpg" alt="Tubus Servicios" />
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
